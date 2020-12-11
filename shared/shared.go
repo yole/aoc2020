@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strconv"
 )
 
 func ProcessInputLines(filename string, callback func(string)) {
@@ -17,4 +18,16 @@ func ProcessInputLines(filename string, callback func(string)) {
 	for scanner.Scan() {
 		callback(scanner.Text())
 	}
+}
+
+func ReadNumbers(input string) []int {
+	result := make([]int, 0)
+	ProcessInputLines(input, func(line string) {
+		n, err := strconv.Atoi(line)
+		if err != nil {
+			log.Fatal(err)
+		}
+		result = append(result, n)
+	})
+	return result
 }

@@ -3,8 +3,6 @@ package main
 import (
 	"aoc2020/shared"
 	"fmt"
-	"log"
-	"strconv"
 )
 
 func main() {
@@ -13,7 +11,7 @@ func main() {
 }
 
 func solveDay9Step1(input string, preamble int) int {
-	numbers := readNumbers(input)
+	numbers := shared.ReadNumbers(input)
 	return findWrongNumber(preamble, numbers)
 }
 
@@ -27,7 +25,7 @@ func findWrongNumber(preamble int, numbers []int) int {
 }
 
 func solveDay9Step2(input string, preamble int) int {
-	numbers := readNumbers(input)
+	numbers := shared.ReadNumbers(input)
 	wrongNumber := findWrongNumber(preamble, numbers)
 	for i := 0; i < len(numbers); i++ {
 		min, max := findContiguousSum(numbers, i, wrongNumber)
@@ -69,16 +67,4 @@ func isSumOfAnyTwo(n int, numbers []int, first int, last int) bool {
 		}
 	}
 	return false
-}
-
-func readNumbers(input string) []int {
-	result := make([]int, 0)
-	shared.ProcessInputLines(input, func(line string) {
-		n, err := strconv.Atoi(line)
-		if err != nil {
-			log.Fatal(err)
-		}
-		result = append(result, n)
-	})
-	return result
 }
