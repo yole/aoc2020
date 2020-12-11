@@ -14,8 +14,8 @@ type BagCount struct {
 }
 
 func main() {
-	fmt.Println(solveDay7Step1("day7input.txt"))
-	fmt.Println(solveDay7Step2("day7input.txt"))
+	fmt.Println(solveDay7Step1("day07input.txt"))
+	fmt.Println(solveDay7Step2("day07input.txt"))
 }
 
 func solveDay7Step1(input string) int {

@@ -35,14 +35,14 @@ func TestParseBagLine7Empty(t *testing.T) {
 }
 
 func TestSolveDay7Step1(t *testing.T) {
-	result := solveDay7Step1("day7testinput.txt")
+	result := solveDay7Step1("day07testinput.txt")
 	if result != 4 {
 		t.Errorf("Unexpected result %d", result)
 	}
 }
 
 func TestSolveDay7Step2(t *testing.T) {
-	result := solveDay7Step2("day7testinput.txt")
+	result := solveDay7Step2("day07testinput.txt")
 	if result != 32 {
 		t.Errorf("Unexpected result %d", result)
 	}

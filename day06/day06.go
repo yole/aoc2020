@@ -13,7 +13,7 @@ func main() {
 	everyoneMask := uint(0)
 	groupStart := true
 
-	shared.ProcessInputLines("day6input.txt", func(line string) {
+	shared.ProcessInputLines("day06input.txt", func(line string) {
 		if len(line) == 0 {
 			anyoneResult += bits.OnesCount(anyoneMask)
 			everyoneResult += bits.OnesCount(everyoneMask)
