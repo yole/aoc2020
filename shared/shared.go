@@ -31,3 +31,11 @@ func ReadNumbers(input string) []int {
 	})
 	return result
 }
+
+func ReadLines(input string) []string {
+	result := make([]string, 0)
+	ProcessInputLines(input, func(line string) {
+		result = append(result, line)
+	})
+	return result
+}
